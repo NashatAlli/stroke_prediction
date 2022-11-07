@@ -46,7 +46,13 @@ The results of these three calculations:
 
 - The results of stroke risk for each group put things into perspective by being more specific to each groups, which makes all the results logical and therefore highlights the importance of some features over others. These highlighted features tell us more about a stroke and can actually increase the likelihood of one occurring.
 
-Conclusion, After doing this EDA on categorical features, The selected  important features are  heart_disease, hypertension, and smoking_status.
+In conclusion, After doing this EDA on categorical features, The selected  important features are  heart_disease, hypertension, and smoking_status.
 
+### EDA on Numerical feature
+
+- The missing numerical values are not mentioned in the Kaggle info section of the data set, so a check is done by the below code. This code checks only for nan because this value can cause errors later while training the model, and also because when we ran df.describe() earlier, the min value for all numerical features was greater than zero.
+Calculating the co-relation to find the assciation and co-realtion srength of different numerical features with the stroke feature. 
+
+In conclusion, the bmi has a very low correlation strength, while age has a medium correlation strength, and the average glucose level has a low but acceptable correlation strength, so these two later numerical features are more important and therefore selected.
 
 
