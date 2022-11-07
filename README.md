@@ -55,4 +55,6 @@ Calculating the co-relation to find the assciation and co-realtion srength of di
 
 In conclusion, the bmi has a very low correlation strength, while age has a medium correlation strength, and the average glucose level has a low but acceptable correlation strength, so these two later numerical features are more important and therefore selected.
 
+## Training different models
+talk about the training steps ,add screen shots for the results of each model just like the  "A Guide to any Classification Problem" kaggle notebook and at the end say what model is chosen and why
 
