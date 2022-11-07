@@ -33,13 +33,20 @@ Secondly, proceed the EDA of the categorical features
  
 note: when saying calculate the mean, it's the mean of stroke column calculated for different groups and globally for all the dataset. 
 
-- Calculate the mean related to different groups, this mean tells us the stroke risk that some group could have in other words, it  tells us the stroke risk likelihood of indiviuals belong to that group could have.
+- Calculate the mean related to different groups, this mean tells us the stroke risk that some group could have in other words, it  tells us the stroke risk likelihood of indiviuals belong to that group could have. The result of the calcutation is stroke risk for each group.
  
-- Calculate the overall risk ratio of different groups, which is simply dividing the individual mean of each group by the global stroke mean of the dataset.
+- Calculate the risk ratio of different groups, which is simply dividing the individual mean of each group by the global stroke mean of the dataset(the global stroke mean= 0.048728).The result is risk ratio. 
 
 - Calculate the mutual information for different groups.
 
+The results of these three calculations:
+- The mutual information results are okay but not logical as it says that the ever_married and work_type featrues tells us more about stroke than features like hypertension, heart_disease and smoking_status.
 
+- The problem with risk ratio results are that it's not specific enough which cause it to have some reults that are not logical and that affects on the selection of the important features because it does not highlight any feature.
+
+- The results of stroke risk for each group put things into perspective by being more specific to each groups, which makes all the results logical and therefore highlights the importance of some features over others. These highlighted features tell us more about a stroke and can actually increase the likelihood of one occurring.
+
+Conclusion, After doing this EDA on categorical features, The selected  important features are  heart_disease, hypertension, and smoking_status.
 
 
 
