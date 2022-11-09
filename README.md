@@ -55,6 +55,27 @@ Calculating the co-relation to find the assciation and co-realtion srength of di
 
 In conclusion, the bmi has a very low correlation strength, while age has a medium correlation strength, and the average glucose level has a low but acceptable correlation strength, so these two later numerical features are more important and therefore selected.
 
+
 ## Training different models
-talk about the training steps ,add screen shots for the results of each model just like the  "A Guide to any Classification Problem" kaggle notebook and at the end say what model is chosen and why
+talk about the training steps
+
+First, before starting training and evaluating the model, the split of the dataset is done by train_test_split, which will split the dataset into 80% for training & validation, and 20% for testing.
+
+Second, cross-validation is performed on the 80% fragment(df_full_train), which trains and validates three different ML models (logistic regression, Random forest, and XGBoost). The evaluation criteria used is ROC_auc_score, which helps us select the best model to use for this project.
+
+Note :
+- ROC_auc_score Measures how well the model predicts true positives and true negatives.(ROC stands for Receiver Operating Characteristics and it's a curve , While AUC stands for area under the ROC curve). In other words, AUC score in probability terms is equal to the probability that a classifier will rank a randomly chosen positive instance higher than a randomly chosen negative one.
+
+- Cross_validation used is called k-fold CV, the training set is split into k smaller sets. 
+- The following procedure is followed for each of the k “folds”:
+- A model is trained using k-1  of the folds as training data; 
+- the resulting model is validated on the remaining part of the data (i.e., it is used as a test set to compute a performance measure such as accuracy).
+
+The performance measure reported by k-fold cross-validation is then the mean of the values computed in the loop.
+
+
+
+add screen shots for the results of each model just like the  "A Guide to any Classification Problem" kaggle notebook and at the end say what model is chosen and why
+
+
 
