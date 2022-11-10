@@ -79,6 +79,9 @@ talk about the training steps
 
 First, before starting training and evaluating the model, the split of the dataset is done by train_test_split, which will split the dataset into 80% for training & validation, and 20% for testing.
 
+<img src="images/splitdata.jpg">
+
+
 Second, cross-validation is performed on the 80% fragment(df_full_train), which trains and validates three different ML models (logistic regression, Random forest, and XGBoost). The evaluation criteria used is ROC_auc_score, which helps us select the best model to use for this project.
 
 Note :
@@ -89,11 +92,28 @@ Note :
 - A model is trained using k-1  of the folds as training data; 
 - the resulting model is validated on the remaining part of the data (i.e., it is used as a test set to compute a performance measure such as accuracy).
 
-The performance measure reported by k-fold cross-validation is then the mean of the values computed in the loop.
+<img src="images/grid_search_cross_validation.png">
+
+The performance measure reported by k-fold cross-validation is then the mean of the values computed in the loop.(see figures below)
+
+### cross-validate the Random forset model
+
+<img src="images/rf_crossval.jpg">
+
+### cross-validate the XGboost model
+
+  xgb parameters          |  xgb cross-validation
+:-------------------------:|:-------------------------:
+<img src=" images/xgb_par.jpg"> |   <img src=" images/xgb_crossval.jpg">
 
 
+### cross-validate logistic regression
 
-add screen shots for the results of each model just like the  "A Guide to any Classification Problem" kaggle notebook and at the end say what model is chosen and why
+The parameters of logistic regression are "LogisticRegression(solver='liblinear', C=1.0, max_iter= 1000)"
+
+<img src="images/log_crossval.jpg">
+
+In conclusion, from the cross-validation results of the three models, the performance of logistic regression is better than the other two models; Therefore, a logistic regression model is selected.
 
 ## Model deployment 
 
