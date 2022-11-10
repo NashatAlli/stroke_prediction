@@ -127,7 +127,15 @@ In conclusion, from the cross-validation results of the three models, the perfor
 
 ## Dependency and enviroment management
 
+- install pipenv with 'pip install pipenv'
 
+- To run the project on another machine, we can easily install the libraries we want with the command "pipenv install." This command will look into Pipfile and Pipfile.lock to install the libraries with the specified version.
+
+- After installing the required libraries we can run the project in the virtual environment with "pipenv shell" command. This will go to the virtual environment's shell and then any command we execute will use the virtual environment's libraries.
+
+- to run the waitress wgsi server use the command "waitress-serve --listen=0.0.0.0:9696 predict risk of stroke:app"
+
+## Containerization
 
 
 
