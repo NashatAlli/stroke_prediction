@@ -22,7 +22,7 @@ Finally, view information about the dataset by running the `df.info()` which pri
 
 Findings from this quick view: 
 - some categorical features(like, hypertension, heart disease and stroke) datatypes are numerical ones, and not object.
-- There is non-null values in all of the columns which is okay but must find what is used to fill missing values(for ex, either filled it with zeros or nan)
+- There are non-null values in all of the columns, which is okay, but we must find what is used to fill in missing values (for example, either zeros or nan).
 ### EDA on Categorical features
 EDA is done to know what categorical features are important in my stroke prediction. 
 First, Change the datatypes of hypertension and heart disease from int64 to object.
