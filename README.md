@@ -120,7 +120,14 @@ In conclusion, from the cross-validation results of the three models, the perfor
 
 <img src="images/model_deploy1.jpg">
 
-## 
+  test the deployment         |  result
+:-------------------------:|:-------------------------:
+<img src="images/test_model_deploy1.jpg"> |   <img src="images/test_res_model_deploy1.jpg">
+
+
+## Dependency and enviroment management
+
+
 
 
 
