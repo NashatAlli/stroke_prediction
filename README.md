@@ -51,9 +51,10 @@ In conclusion, After doing this EDA on categorical features, The selected  impor
 ### EDA on Numerical feature
 
 - The missing numerical values are not mentioned in the Kaggle info section of the data set, so a check is done by the below code. This code checks only for nan because this value can cause errors later while training the model, and also because when we ran df.describe() earlier, the min value for all numerical features was greater than zero.
-Calculating the co-relation to find the assciation and co-realtion srength of different numerical features with the stroke feature. 
 
-In conclusion, the bmi has a very low correlation strength, while age has a medium correlation strength, and the average glucose level has a low but acceptable correlation strength, so these two later numerical features are more important and therefore selected.
+- Calculating the co-relation to find the association and co-realtion srength of different numerical features with the stroke feature. 
+
+In conclusion, the Body mass index (bmi) has a very low correlation strength, while age has a medium correlation strength, and the average glucose level has a low but acceptable correlation strength, so these two later numerical features are more important and therefore selected.
 
 
 ## Training different models
@@ -76,6 +77,12 @@ The performance measure reported by k-fold cross-validation is then the mean of 
 
 
 add screen shots for the results of each model just like the  "A Guide to any Classification Problem" kaggle notebook and at the end say what model is chosen and why
+
+## Model deployment 
+
+- The model is deployed with flask. 
+- The ML service returns a response that include the prediciton_probaility and the risk_liklihood based on that prediction.
+
 
 
 
