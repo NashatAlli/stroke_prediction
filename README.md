@@ -115,10 +115,12 @@ The parameters of logistic regression are "LogisticRegression(solver='liblinear'
 
 In conclusion, from the cross-validation results of the three models, the performance of logistic regression is better than the other two models; Therefore, a logistic regression model is selected.
 
-## Model deployment 
-
-- The model is deployed with flask. 
+## Flask Model deployment 
 - The ML service returns a response that include the prediciton_probaility and the risk_liklihood based on that prediction.
+
+<img src="images/model_deploy1.jpg">
+
+## 
 
 
 
