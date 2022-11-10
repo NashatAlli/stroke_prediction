@@ -16,6 +16,10 @@ This is done by first take a view at different random samples from the data.
 Then, take a view at the numerical data by df.describe() to see the count ,the five number summary, the mean and the std(standard deviation).
 Finally, view information about the dataset by running the df.info() which prints information about a Dataset including the number of columns, column labels, column data types, memory usage, range index, and the number of cells in each column (non-null values). 
 
+   Describe             |  Info
+:-------------------------:|:-------------------------:
+<img  align="left" src="images/edadfdescribe.jpg">  |  <img src="images/edadfinfo.jpg">
+
 Findings from this quick view: 
 - some categorical features(like, hypertension, heart disease and stroke) datatypes are numerical ones, and not object.
 - There is non-null values in all of the columns which is okay but must find what is used to fill missing values(for ex, either filled it with zeros or nan)
@@ -37,14 +41,23 @@ note: when saying calculate the mean, it's the mean of stroke column calculated 
  
 - Calculate the risk ratio of different groups, which is simply dividing the individual mean of each group by the global stroke mean of the dataset(the global stroke mean= 0.048728).The result is risk ratio. 
 
+<img src="images/calcriskratioriskeachgroup.jpg">
+
 - Calculate the mutual information for different groups.
+<img src="images/calcmi.jpg">
 
 The results of these three calculations:
 - The mutual information results are okay but not logical as it says that the ever_married and work_type featrues tells us more about stroke than features like hypertension, heart_disease and smoking_status.
 
-- The problem with risk ratio results are that it's not specific enough which cause it to have some reults that are not logical and that affects on the selection of the important features because it does not highlight any feature.
+<img src="images/resmi.jpg">
 
-- The results of stroke risk for each group put things into perspective by being more specific to each groups, which makes all the results logical and therefore highlights the importance of some features over others. These highlighted features tell us more about a stroke and can actually increase the likelihood of one occurring.
+- The problem with the risk ratio results is that they're not specific enough, which causes them to have some results that are not logical and affects the selection of the important features because they do not highlight any feature.
+For example, in the figure below, the female feature is 0.96 points above average, which indicates high risk for females, and patients with heart disease are 3.494 points above average, which indicates high risk for this group of patients as well.
+
+- The results of stroke risk for each group put things into perspective by being more specific to each group, which makes all the results logical and therefore highlights the importance of some features over others. These highlighted features tell us more about a stroke and can actually increase the likelihood of one occurring.
+In the figure below, for example, women have a 4% risk of having a stroke, whereas patients with heart disease have a 17% risk. 
+
+<img src="images/resriskratioriskeachgroup.jpg">
 
 In conclusion, After doing this EDA on categorical features, The selected  important features are  heart_disease, hypertension, and smoking_status.
 
@@ -52,7 +65,11 @@ In conclusion, After doing this EDA on categorical features, The selected  impor
 
 - The missing numerical values are not mentioned in the Kaggle info section of the data set, so a check is done by the below code. This code checks only for nan because this value can cause errors later while training the model, and also because when we ran df.describe() earlier, the min value for all numerical features was greater than zero.
 
+<img src="images/checknanvlu.jpg">
+
 - Calculating the co-relation to find the association and co-realtion srength of different numerical features with the stroke feature. 
+
+<img src="images/rescorelation.jpg">
 
 In conclusion, the Body mass index (bmi) has a very low correlation strength, while age has a medium correlation strength, and the average glucose level has a low but acceptable correlation strength, so these two later numerical features are more important and therefore selected.
 
