@@ -13,8 +13,8 @@ With an increased synergy between technology and medical diagnosis, caregivers c
 ## Exploratory data analysis (EDA)
 ### A quick view on the dataset
 This is done by first take a view at different random samples from the data. 
-Then, take a view at the numerical data by df.describe() to see the count ,the five number summary, the mean and the std(standard deviation).
-Finally, view information about the dataset by running the df.info() which prints information about a Dataset including the number of columns, column labels, column data types, memory usage, range index, and the number of cells in each column (non-null values). 
+Then, take a view at the numerical data by `df.describe()` to see the count ,the five number summary, the mean and the std(standard deviation).
+Finally, view information about the dataset by running the `df.info()` which prints information about a Dataset including the number of columns, column labels, column data types, memory usage, range index, and the number of cells in each column (non-null values). 
 
    Describe             |  Info
 :-------------------------:|:-------------------------:
