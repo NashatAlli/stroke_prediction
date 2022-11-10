@@ -109,7 +109,7 @@ The performance measure reported by k-fold cross-validation is then the mean of 
 
 ### cross-validate logistic regression
 
-The parameters of logistic regression are "LogisticRegression(solver='liblinear', C=1.0, max_iter= 1000)"
+The parameters of logistic regression are `LogisticRegression(solver='liblinear', C=1.0, max_iter= 1000)`
 
 <img src="images/log_crossval.jpg">
 
@@ -127,16 +127,31 @@ In conclusion, from the cross-validation results of the three models, the perfor
 
 ## Dependency and enviroment management
 
-- install pipenv with 'pip install pipenv'
+- install pipenv with `pip install pipenv`
 
-- To run the project on another machine, we can easily install the libraries we want with the command "pipenv install." This command will look into Pipfile and Pipfile.lock to install the libraries with the specified version.
+- To run the project on another machine, we can easily install the libraries we want with the command `pipenv install`. This command will look into Pipfile and Pipfile.lock to install the libraries with the specified version.
 
-- After installing the required libraries we can run the project in the virtual environment with "pipenv shell" command. This will go to the virtual environment's shell and then any command we execute will use the virtual environment's libraries.
+- After installing the required libraries we can run the project in the virtual environment with `pipenv shell` command. This will go to the virtual environment's shell and then any command we execute will use the virtual environment's libraries.
 
-- to run the waitress wgsi server use the command "waitress-serve --listen=0.0.0.0:9696 predict risk of stroke:app"
+- to run the waitress wgsi server use the command `waitress-serve --listen=0.0.0.0:9696 predict risk of stroke:app`
 
 ## Containerization
 
+Clone the repo using this command.
 
+git clone (https://github.com/NashatAlli/stroke_prediction.git) 
+Then you need to be shure that you have docker installed. You can check it using this command.
+docker --version
+If it outputs current version everything is ok, continue. If yout don't have docker you need firstly install it.
+
+Now build the docker image using Dockerfile from reposity. You need to be in the project folder and perfrom this command in a terminal.
+
+`docker build -t [add image name:image tag] .` (the dot at the end refers to the path to the current directory, since Dockerfile is in that directory)
+
+Then to run a container based on that image, the below command will be used. It will perfrom all needed instruction from Dockerfile and run the flask server locally via 9696 port to have acces to model testing. All dependencies are defined in Pipfile which docker uses automatically.
+
+`docker run -it --rm -p (add port on the host machine to bind to the container's port : the container port that the host will be bound to) [image name:image tag]`
+
+The port numbers used in this project are 7777 for the exposed port (the container port to which the host will be bound) and 9898 for the non-specific host machine port.(non-specific means any chosen host machine port number) 
 
 
