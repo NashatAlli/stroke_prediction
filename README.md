@@ -33,11 +33,11 @@ note: (Leaving stroke feature as int64 ,it's 1 if the patient had a stroke or 0 
 
 Secondly, proceed the EDA of the categorical features
 
-- The missing categorical values is filled with "unkown" and this information is available in the kaggle information section about dataset. 
+- The missing categorical values are filled with "unkown" and this information is available in the kaggle information section about dataset. 
  
 note: when saying calculate the mean, it's the mean of stroke column calculated for different groups and globally for all the dataset. 
 
-- Calculate the mean related to different groups, this mean tells us the stroke risk that some group could have in other words, it  tells us the stroke risk likelihood of indiviuals belong to that group could have. The result of the calcutation is stroke risk for each group.
+- Calculate the mean related to different groups; this mean tells us the stroke risk that some group could have; in other words, it tells us the likelihood of stroke for individuals belonging to that group. The result of the calculation is the stroke risk for each group.
  
 - Calculate the risk ratio of different groups, which is simply dividing the individual mean of each group by the global stroke mean of the dataset(the global stroke mean= 0.048728).The result is risk ratio. 
 
@@ -87,7 +87,7 @@ Second, cross-validation is performed on the 80% fragment(df_full_train), which 
 Note :
 - ROC_auc_score Measures how well the model predicts true positives and true negatives.(ROC stands for Receiver Operating Characteristics and it's a curve , While AUC stands for area under the ROC curve). In other words, AUC score in probability terms is equal to the probability that a classifier will rank a randomly chosen positive instance higher than a randomly chosen negative one.
 
-- Cross_validation used is called k-fold CV, the training set is split into k smaller sets. 
+- Cross-validation used is called "k-fold CV," where the training set is split into k smaller sets. 
 - The following procedure is followed for each of the k “folds”:
 - A model is trained using k-1  of the folds as training data; 
 - the resulting model is validated on the remaining part of the data (i.e., it is used as a test set to compute a performance measure such as accuracy).
@@ -96,27 +96,27 @@ Note :
 
 The performance measure reported by k-fold cross-validation is then the mean of the values computed in the loop.(see figures below)
 
-### cross-validate the Random forset model
+### Cross-validate the random forest model
 
 <img src="images/rf_crossval.jpg">
 
-### cross-validate the XGboost model
+### Cross-validate the XGboost model
 
   xgb parameters          |  xgb cross-validation
 :-------------------------:|:-------------------------:
 <img src=" images/xgb_par.jpg"> |   <img src=" images/xgb_crossval.jpg">
 
 
-### cross-validate logistic regression
+### Cross-validate logistic regression
 
 The parameters of logistic regression are `LogisticRegression(solver='liblinear', C=1.0, max_iter= 1000)`
 
 <img src="images/log_crossval.jpg">
 
-In conclusion, from the cross-validation results of the three models, the performance of logistic regression is better than the other two models; Therefore, a logistic regression model is selected.
+In conclusion, from the cross-validation results of the three models, the performance of logistic regression is better than the other two models; therefore, a logistic regression model is selected.
 
 ## Flask Model deployment 
-- The ML service returns a response that include the prediciton_probaility and the risk_liklihood based on that prediction.
+- The ML service returns a response that includes the prediction probability and the risk likelihood based on that prediction.
 
 <img src="images/model_deploy1.jpg">
 
